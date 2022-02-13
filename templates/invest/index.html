@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Index 페이지</title>
+{% endblock%}
+
+{% block content %}
+        이용 가능 페이지
+        <hr>
+        <ul>
+            <li><a href="{% url 'invest:chart' %}">차트 검색 페이지</a>
+            <li><a href="{% url 'invest:info' %}">정보 검색 페이지</a>
+            <li><a href="{% url 'invest:memo' %}">메모 페이지</a>
+        </ul>
+{% endblock %}

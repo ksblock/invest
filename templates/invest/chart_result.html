@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>검색 결과 페이지</title>
+{% endblock%}
+
+{% block content %}
+    방법 1
+    <p>
+        {% for data in stock_data %}
+        {{ data|safe }}<br/>
+        {% endfor %}
+    </p>
+    방법 2
+    <script>document.writeln('test1<br>');</script>
+    {% if test_data %}
+        있어?
+        {{ test_data | json_script:'json_data'}}
+        <script>
+        var price_data = JSON.parse(document.getElementById('json_data').textContent);
+        for(var key1 in price_data){
+            var daily_data = JSON.parse(price_data[key1]);
+            document.write(daily_data['time'] + " " + daily_data['price'] + "<br>");
+        }
+        </script>
+    {% endif %}
+{% endblock %}
+
+

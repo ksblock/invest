@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>검색 결과 페이지</title>
+{% endblock%}
+
+{% block content %}
+    <div class="container my-3">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>시가총액</th>
+                    <th>매출</th>
+                    <th>영업이익</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ market }}</td>
+                    <td>{{ sales }}</td>
+                    <td>{{ profit }}</td>
+                </tr>
+            </tbody>
+    </table>
+    </div>
+{% endblock %}
+
+

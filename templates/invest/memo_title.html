@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>메모 목록</title>
+{% endblock%}
+
+{% block content %}
+<div class="container my-3">
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성일시</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if memo_list %}
+        {% for memo in memo_list %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td><a href="{% url 'invest:memo_content' memo.id %}">{{ memo.subject }}</a></td>
+            <td>{{ memo.create_date }}</td>
+        </tr>
+        {% endfor %}
+        {% else %}
+            <tr>질문이 없습니다.</tr>
+        {% endif %}
+        </tbody>
+    </table>
+    <a href="{% url 'invest:memo_create' %}">메모 작성</a>
+</div>
+{% endblock %}
+

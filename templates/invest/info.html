@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>기업 정보 검색 페이지</title>
+    <style>
+    .search-bar{
+        width: 500px;
+    }
+    </style>
+{% endblock%}
+
+{% block content %}
+    <div class="border-bottom">기업 정보 검색 페이지</div>
+        </br>
+        <div class="search-bar">
+            <form class="d-flex" method="POST" action="{% url 'invest:info_result' %}">
+                {% csrf_token %}
+                <input class="form-control me-2" type="search" placeholder="Search" name="searched" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit"> Search </button>
+            </form>
+        <div>
+{% endblock %}

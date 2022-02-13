@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>{{ memo.id }}번째 글</title>
+{% endblock%}
+
+{% block content %}
+<div class="container my-3">
+    <h2 class="border-bottom py-2">{{ memo.subject }}</h2>
+    <div class="card my-3">
+        <div class="card-body">
+            <div class="card-text" style="white-space: pre-line;">{{ memo.content }}</div>
+            <div class="d-flex justify-content-end">
+                {{ memo.create_date }}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

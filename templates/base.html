@@ -1,0 +1,14 @@
+{% load static %}
+<!doctype html>
+<html lang="ko">
+<head>
+    <link rel="stylesheet", type="text/css", href="{% static 'bootstrap.min.css' %}">
+    {% block title %}
+    {% endblock title %}
+</head>
+<body>
+    {% block content %}
+    {% endblock content %}
+</body>
+</html>
+
